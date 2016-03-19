@@ -24,6 +24,7 @@ function sellFunction() {
 }
 
 function findBookButtonFunction() {
+	console.log("Finding book");
 	var searchResult = document.getElementById('search_result');
 	searchResult.style.display = 'block';
 }
