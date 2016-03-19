@@ -1,0 +1,35 @@
+CREATE TABLE Account
+{
+	Name VARCHAR(200),
+	Id VARCHAR(200),
+	Email VARCHAR(200),
+	Phone CHAR(10),
+	PRIMARY KEY (Id)
+}
+
+CREATE TABLE Class
+{
+	Dept VARCHAR(4),
+	Course_num VARCHAR(4),
+	Id VARCHAR(9),
+	PRIMARY KEY (Id)
+}
+
+CREATE TABLE Book
+{
+	Isbn VARCHAR(200),
+	Class VARCHAR(9),
+	Title VARCHAR(200),
+	Edition INT,
+	PRIMARY KEY (Isbn),
+	FOREIGN KEY (Class) REFERENCES Class(Id)
+}
+
+CREATE TABLE For_Sale
+{
+	Book_isbn VARCHAR(200),
+	Seller VARCHAR(200),
+	Price DECIMAL,
+	FOREIGN KEY (Book) REFERENCES Book(Isbn),
+	FOREIGN KEY(Seller) REFERENCES Account(Id)
+}
