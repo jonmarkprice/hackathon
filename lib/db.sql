@@ -4,6 +4,8 @@ create table account
 	id varchar(200),
 	email varchar(200),
 	phone char(10),
+	#hash char(),
+	#salt char(),
 	primary key (id)
 };
 
@@ -41,6 +43,6 @@ create table picture
 {
 	picture varchar(200),
 	for_sale_id integer
-
+	foreign key (for_sale_id) references 
 }
 
