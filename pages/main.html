@@ -1,0 +1,86 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+	<title>MainPage</title>
+
+	<!-- Google Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+	<meta charset="utf-8"/>
+</head>
+<body>
+	<header id="header">
+		<h1>Truman State Online Bookstore</h1>
+	</header>
+
+	<main id="main">
+		<div id="buttons">
+			<button class="btn btn-default" type="submit" id="buy_button">Buy</button>
+			<button class="btn btn-default" type="submit" id="sell_button">Sell</button>
+		</div>
+
+
+		<!-- Buy Panel -->
+		<div id="buy_info">
+			<form class="form-inline">
+				<div class="form-group">
+ 			  		<label for="subject_input_buy">Subject</label>
+    				<input type="text" class="form-control" id="subject_input_buy" placeholder="Enter subject, e.g. CS">
+  				</div>
+
+  				<div class="form-group">
+ 			   		<label for="course_num_input">Course Number</label>
+    				<input type="text" class="form-control" id="course_num_input_buy" placeholder="Enter course number, e.g. 310">
+  				</div>
+
+  				<div class="form-group">
+ 			  		<label for="book_name_input">Title</label>
+    				<input type="text" class="form-control" id="book_title_input_buy" placeholder="Enter title, e.g. Data Structures and Algorithms">
+  				</div>
+  				
+  				<button type="submit" class="btn btn-default">Find Book</button>
+			</form>
+		</div>
+
+		<!-- Sell Panel -->
+		<div id="sell_info">
+			<form class="form-horizontal">
+  				<div class="form-group">
+    				<label for="subject_input" class="col-sm-2 control-label">Subject</label>
+    				<div class="col-sm-10">
+      					<input type="text" class="form-control" id="subject_input_sell" placeholder="Enter subject, e.g. CS">
+    				</div>
+  				</div>
+
+  				<div class="form-group">
+    				<label for="course_num_input" class="col-sm-2 control-label">Course Number</label>
+    				<div class="col-sm-10">
+      					<input type="text" class="form-control" id="course_num_input_sell" placeholder="Enter course number, e.g. 310">
+    				</div>
+  				</div>
+
+  				<div class="form-group">
+    				<label for="price_input" class="col-sm-2 control-label">Price</label>
+    				<div class="col-sm-10">
+      					<input type="text" class="form-control" id="price_input" placeholder="Enter price, e.g. 12.00">
+    				</div>
+  				</div>
+
+  				<div class="form-group">
+    				<label for="book_title_input" class="col-sm-2 control-label">Title</label>
+    				<div class="col-sm-10">
+      					<input type="text" class="form-control" id="book_title_input_sell" placeholder="Enter book title (e.g. Data Structures and Algorithms)">
+    				</div>
+  				</div>
+
+  				<div class="form-group">
+    				<div class="col-sm-offset-2 col-sm-10">
+      					<button type="submit" class="btn btn-default">Sell Book</button>
+    				</div>
+  				</div>
+			</form>
+		</div>
+	</main>
+</body>
+</html>
