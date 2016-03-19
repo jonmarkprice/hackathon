@@ -1,0 +1,25 @@
+#header {
+	background-color: lightblue;
+	border-bottom: 1px solid black;
+	width: 100%;
+}
+#login {
+	border: 1px solid black;
+	margin: 0 auto;
+}
+#login_button {
+	background-color: yellow;
+}
+#main {
+	background-color: lightblue;
+	width: 100%;
+}
+#password_input {
+	border-radius: 10px;
+}
+#signup_button {
+	background-color: yellow;
+}
+#username_input {
+	border-radius: 10px;
+}
