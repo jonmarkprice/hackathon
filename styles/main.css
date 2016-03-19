@@ -25,6 +25,17 @@ body {
 	padding-top: 1%;
 	text-align: center;
 }
+#search_result {
+	display: none;
+}
+#search_result h2 {
+	color: #2B2B2B;
+	font-family: cursive, serif;
+	font-size: 35px;
+	margin-top: 0px;
+	padding-top: 1%;
+	text-align: center;
+}
 #sell_button {
 	font-size: 35px;
     height: 18%;
