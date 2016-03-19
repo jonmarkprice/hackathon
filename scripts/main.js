@@ -4,6 +4,9 @@ window.onload = function() {
 
 	var sellButton = document.getElementById('sell_button');
 	sellButton.onclick = sellFunction;
+
+	var findBookButton = document.getElementById('find_book_button');
+	findBookButton.onclick = findBookButtonFunction;
 }
 
 function buyFunction() {
@@ -18,4 +21,9 @@ function sellFunction() {
 	buyInfo.style.display = 'none';
 	var sellInfo = document.getElementById('sell_info');
 	sellInfo.style.display = 'block';
+}
+
+function findBookButtonFunction() {
+	var searchResult = document.getElementById('search_result');
+	searchResult.style.display = 'block';
 }
