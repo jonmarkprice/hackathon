@@ -21,10 +21,11 @@ function sellFunction() {
 	buyInfo.style.display = 'none';
 	var sellInfo = document.getElementById('sell_info');
 	sellInfo.style.display = 'block';
+	var searchResult = document.getElementById('search_result');
+	searchResult.style.display = 'none';
 }
 
 function findBookButtonFunction() {
-	console.log("Finding book");
 	var searchResult = document.getElementById('search_result');
 	searchResult.style.display = 'block';
 }
