@@ -21,11 +21,23 @@
 	padding: 5% 0 5% 0;
 	width: 100%;
 }
+#password {
+	margin: 1% 0;
+}
+#password p {
+	margin: 1% 0;
+}
 #password_input {
 	border-radius: 10px;
 }
 #signup_button {
 	background-color: yellow;
+}
+#username {
+	margin: 1% 0;
+}
+#username p {
+	margin: 1% 0;
 }
 #username_input {
 	border-radius: 10px;
