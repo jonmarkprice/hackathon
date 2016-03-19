@@ -1,4 +1,5 @@
 body {
+	background-color: #F6F6F6;
 	margin: 0;
 }
 label {
@@ -8,13 +9,12 @@ label {
 	margin: 1% auto;
 }
 #header {
-	background-color: #F6F6F6;
 	border-bottom: 3px solid #DE1B1B;
 	width: 100%;
 }
 #header h1 {
 	color: #2B2B2B;
-	font-family: cursive;
+	font-family: cursive, serif;
 	font-size: 35px;
 	margin-top: 0px;
 	padding-top: 1%;
@@ -36,7 +36,6 @@ label {
 	color: #2B2B2B;
 }
 #main {
-	background-color: #F6F6F6;
 	padding: 5% 0 5% 0;
 	width: 100%;
 }
