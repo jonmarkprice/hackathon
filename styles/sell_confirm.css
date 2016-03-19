@@ -1,0 +1,15 @@
+body {
+	background-color: #F6F6F6;
+	margin: 0;
+}
+#header {
+	margin: 0 auto;
+	text-align: center;
+}
+#main {
+	margin: 0 auto;
+	text-align: center;
+}
+#return_button {
+	margin-top: 1%;
+}
