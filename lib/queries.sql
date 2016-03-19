@@ -10,9 +10,16 @@ where id=:id;
 insert into book values (:dept, :course_num, :title, :edition);
 
 /*to update a book for sale's values*/
+update book
+set course_dept=:dept, course_num=:course_num, title=:title, edition=:edition
+where id=:id;
 
 /*to add a picture to book selling*/
 insert into picture values (:picture, :for_sale_id);
+
+/*to update picture*/
+update picture
+set picture
 
 /*to add a new course*/
 insert into course values (:dept, :num);
@@ -25,3 +32,12 @@ and book.course_dept = :dept
 and book.course_num = :course_num
 or book.title = :title;
 
+/*access all books for one particular seller*/
+select *
+from for_sale
+where seller=:username;
+
+/*when one book is clicked on*/
+select * 
+from for_sale
+where id=:id;

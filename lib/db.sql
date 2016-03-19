@@ -39,13 +39,12 @@ create table for_sale (
 	book_id varchar(200),
 	seller varchar(200),
 	price decimal,
-	picture_file_name varchar(200),
 	foreign key (book_id) references book(id),
 	foreign key (seller) references account(id)
 );
 
 create table picture (
-	picture varchar(200),
+	url varchar(200),
 	for_sale_id integer,
 	foreign key (for_sale_id) references for_sale(id)
 );
