@@ -1,4 +1,4 @@
-window.onload {
+window.onload = function() {
 	var buyButton = document.getElementById('buy_button');
 	buyButton.onclick = buyFunction;
 
@@ -8,7 +8,7 @@ window.onload {
 
 function buyFunction() {
 	var buyInfo = document.getElementById('buy_info');	
-	buyInfo.style.display = '';
+	buyInfo.style.display = 'block';
 	var sellInfo = document.getElementById('sell_info');
 	sellInfo.style.display = 'none';
 }
@@ -17,5 +17,5 @@ function sellFunction() {
 	var buyInfo = document.getElementById('buy_info');	
 	buyInfo.style.display = 'none';
 	var sellInfo = document.getElementById('sell_info');
-	sellInfo.style.display = '';
+	sellInfo.style.display = 'block';
 }
