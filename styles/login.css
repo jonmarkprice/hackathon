@@ -3,15 +3,22 @@
 	border-bottom: 1px solid black;
 	width: 100%;
 }
+#header h1 {
+	font-size: 28px; 
+	text-align: center;
+}
 #login {
 	border: 1px solid black;
 	margin: 0 auto;
+	text-align: center;
+	width: 50%;
 }
 #login_button {
 	background-color: yellow;
 }
 #main {
 	background-color: lightblue;
+	padding: 5% 0 5% 0;
 	width: 100%;
 }
 #password_input {
