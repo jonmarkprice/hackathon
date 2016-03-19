@@ -2,7 +2,13 @@
 <html>
 <head>
 	<title>LoginPanel</title>
+
+	<!-- Google Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="../styles/login.css" />
+	<script type="text/javascript" src="../scripts/login.js"></script>
 	<meta charset="utf-8" />
 </head>
 <body>
@@ -10,30 +16,32 @@
 		<h1> TruBook </h1>
 	</header>
 
-	<!-- Login Panel -->
 	<main id="main"> 
+
+		<!-- Login Panel -->
 		<div id="login">
+
+			<!-- Input fields -->
 			<div id="input_fields">
-				<div id="username"> 
-					<p> Username: </p>
-					<input id="username_input" type="text"></input>
-				</div>
-			
-				<div id="password"> 
-					<p> Password: </p>
-					<input id="password_input" type="text"> </input>
-				</div>
+				<div class="form-group">
+    				<label for="username_input">Username</label>
+    				<input type="text" class="form-control" id="username" placeholder="Enter username">
+  				</div>
+  			
+  				<div class="form-group">
+    				<label for="password_input">Password</label>
+    				<input type="password" class="form-control" id="password" placeholder="Enter password">
+  				</div>
 			</div>
+			
 			
 			<!-- Buttons -->
 			<div id="buttons">
-				<button id="login_button"> Enter </button>
-				<button id="signup_button"> Sign Up </button>
+			 	<button type="submit" class="btn btn-default" id="login_button">Log In</button>
+
+			 	<button type="submit" class="btn btn-default" id="signup_button">Sign Up</button>
 			</div>
 		</div>
-
-		<img src="http://www.truman.edu/wp-content/uploads/2014/06/BulldogPuppy2012-27-of-41.jpg" alt="Go Bulldog!" 
-		style="width: 128px;  height: 128px">
 	</main>
 
 </body>

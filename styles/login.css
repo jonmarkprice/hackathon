@@ -1,44 +1,62 @@
+body {
+	background-color: #F6F6F6;
+	margin: 0;
+}
+label {
+	color: #F6F6F6;
+}
+#buttons {
+	margin: 1% auto;
+}
 #header {
-	background-color: lightblue;
-	border-bottom: 1px solid black;
+	border-bottom: 3px solid #DE1B1B;
 	width: 100%;
 }
 #header h1 {
-	font-size: 28px; 
+	color: #2B2B2B;
+	font-family: cursive, serif;
+	font-size: 35px;
+	margin-top: 0px;
+	padding-top: 1%;
 	text-align: center;
+}
+#input_fields {
+	margin: 0 auto;
 }
 #login {
-	border: 1px solid black;
+	background-color: #2B2B2B;
+	border: 3px solid #DE1B1B;
+	border-radius: 10px;
 	margin: 0 auto;
 	text-align: center;
-	width: 50%;
+	width: 40%;
 }
 #login_button {
-	background-color: yellow;
+	background-color: #E9E581;
+	color: #2B2B2B;
 }
 #main {
-	background-color: lightblue;
 	padding: 5% 0 5% 0;
 	width: 100%;
 }
-#password {
-	margin: 1% 0;
-}
 #password p {
+	font-size: 18px;
 	margin: 1% 0;
 }
 #password_input {
 	border-radius: 10px;
 }
 #signup_button {
-	background-color: yellow;
-}
-#username {
-	margin: 1% 0;
+	background-color: #E9E581;
+	color: #2B2B2B;
 }
 #username p {
+	font-size: 18px;
 	margin: 1% 0;
 }
 #username_input {
 	border-radius: 10px;
+}
+.form-control {
+	background-color: #F6F6F6;
 }
