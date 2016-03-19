@@ -1,0 +1,15 @@
+body {
+	background-color: #F6F6F6;
+	margin: 0;
+}
+#header h1 {
+	color: #2B2B2B;
+	font-family: cursive, serif;
+	font-size: 35px;
+	margin-top: 0px;
+	padding-top: 1%;
+	text-align: center;
+}
+#main {
+	text-align: center;
+}
