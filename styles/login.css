@@ -1,3 +1,7 @@
+#buttons {
+	margin: 1% auto;
+	width: 26%;
+}
 #header {
 	background-color: lightblue;
 	border-bottom: 1px solid black;
@@ -6,6 +10,9 @@
 #header h1 {
 	font-size: 28px; 
 	text-align: center;
+}
+#input_fields {
+	margin: 0 auto;
 }
 #login {
 	border: 1px solid black;
@@ -21,10 +28,8 @@
 	padding: 5% 0 5% 0;
 	width: 100%;
 }
-#password {
-	margin: 1% 0;
-}
 #password p {
+	font-size: 18px;
 	margin: 1% 0;
 }
 #password_input {
@@ -33,10 +38,8 @@
 #signup_button {
 	background-color: yellow;
 }
-#username {
-	margin: 1% 0;
-}
 #username p {
+	font-size: 18px;
 	margin: 1% 0;
 }
 #username_input {
