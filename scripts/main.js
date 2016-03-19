@@ -1,3 +1,3 @@
 var main = function (argument) {
-	var buy_button = getElementById
+	var buy_button = document.getElementById()
 }
