@@ -8,9 +8,10 @@ body {
     width: 10%;
 }
 #buy_info {
-	/* display: none; */
-	margin: 1% auto;
+	display: none;
+	margin-left: 16%;
     text-align: center;
+    width: 60%;
 }
 #buttons {
 	margin: 1% auto;
@@ -30,5 +31,8 @@ body {
     width: 10%;
 }
 #sell_info {
-	/* display: none; */
+	display: none;
+	margin-left: 16%;
+    text-align: center;
+    width: 60%;
 }
