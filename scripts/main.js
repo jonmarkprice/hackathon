@@ -42,10 +42,10 @@ function findBookButtonFunction() {
 
 function sellBookButtonFunction() {
 	var verified = verifySubject('subject_input_sell', 'subject_sell_error') &&
-		verifyCourseNum('course_num_input_sell', 'course_num_sell_error');
+		verifyCourseNum('course_num_input_sell', 'course_num_sell_error') &&
+		verifyPrice('price_input', 'price_error');;
 
 	if (verified) {
-		console.log("OK");
 		window.location.href = 'sell_confirm.html';
 	}
 }
@@ -78,6 +78,27 @@ function verifyCourseNum(inputId, errorId) {
 		if (!document.getElementById(errorId).hasChildNodes()) {
 			var errorMessage = document.createElement('p');
 			errorMessage.innerHTML = "Course number must be 3 digits";
+			errorMessage.id = errorId + "_message";
+			errorMessage.style.textAlign = "left";
+			errorMessage.style.marginLeft = '18%';
+			errorMessage.style.color = 'red';
+			document.getElementById(errorId).appendChild(errorMessage);
+		}
+		return false;
+	} else if (document.getElementById(errorId).hasChildNodes()) {
+		var errorMessage = document.getElementById(errorId + "_message");
+		errorMessage.parentNode.removeChild(errorMessage);
+	}
+	return true;
+}
+
+function verifyPrice(inputId, errorId) {
+	var price = document.getElementById(inputId).value;
+	var priceRegex = /^\d{1,4}(\.\d{1,2})?$/;
+	if (!priceRegex.test(price)) {
+		if (!document.getElementById(errorId).hasChildNodes()) {
+			var errorMessage = document.createElement('p');
+			errorMessage.innerHTML = "Invalid price";
 			errorMessage.id = errorId + "_message";
 			errorMessage.style.textAlign = "left";
 			errorMessage.style.marginLeft = '18%';
