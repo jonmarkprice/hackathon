@@ -7,7 +7,7 @@ function loginFunction() {
 	var username = document.getElementById('username').value;
 	var password = document.getElementById('password').value;
 
-	if (username == 'admin' && password == 'hackathon16') {
+	if (username == 'bulldog' && password == 'hackathon16') {
 		window.location.href = 'main.html';
 	} else if (!document.getElementById('login_failure').hasChildNodes()) {
 		var message = document.createElement('p');
