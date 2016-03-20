@@ -67,3 +67,8 @@ where seller=:username;
 select * 
 from for_sale
 where id=:id;
+
+/*to get hash and salt*/
+select hash, salt
+from account
+where id = :id;
