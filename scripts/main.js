@@ -35,9 +35,47 @@ function findBookButtonFunction() {
 	var searchResult = document.getElementById('search_results');	
 	if (verified) {
 		searchResult.style.display = 'block';
+		createResult();
 	} else {
 		searchResult.style.display = 'none';
 	}
+}
+
+function createResult() {
+	var div = document.createElement('div');
+	div.style.border = '2px solid #2B2B2B';
+	div.style.width = '60%';
+	div.style.margin = '0 auto';
+	var ul = document.createElement('ul');
+	ul.style.listStyleType = 'none';
+	for (var i = 1; i < 7; i++) {
+		var li = document.createElement('li');
+		li.style.fontSize = 'medium';
+		li.innerHTML = 'li content';
+		ul.appendChild(li);
+		if (i == 2) {
+			var par = document.createElement('p');
+			par.innerHTML = 'Seller info:';
+			par.style.fontWeight = 'bold';
+			par.style.margin = '0';
+			li.appendChild(par);
+		}
+		else if(i > 2 && i < 6) {
+			li.style.textIndent = '20px';
+		}
+	}
+	div.appendChild(ul);
+	var picture = document.createElement('img');
+	picture.style.float = 'right';
+	div.appendChild(picture);
+	var button = document.createElement('button');
+	button.innerHTML = 'Buy!';
+	button.style.margin = '0 0 1% 5%';
+	button.className = 'btn btn-default';
+	div.appendChild(button);
+
+	var resultsSection = document.getElementById('search_results');
+	resultsSection.appendChild(div);
 }
 
 function sellBookButtonFunction() {
