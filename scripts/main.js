@@ -43,8 +43,8 @@ function findBookButtonFunction() {
 
 function addResults() {
 	var ul, obj, i;
-	obj = JSON.parse(req.response); //!
-	console.log(obj === undefined);
+	obj = JSON.parse(req.response);
+	console.log("addResults");
 	for (var i = 0; i < obj.length; i++) {
 		createResult(obj[i]);
 	}
@@ -55,9 +55,10 @@ function addResults() {
 var req;
 function sendAJAXRequest() {
 	req = new XMLHttpRequest();
-	req.open('POST', '../lib/template.json', true); // GET or POST?
+	req.open('POST', 'http://150.243.196.199/~jon/hackathon/lib/template.json', true); // GET or POST?
 	req.setRequestHeader("Content-Type", "application/json"); // mb.
 	req.onload = addResults;
+	console.log("sendAJAXRequest");
 	req.send();
 }
 
@@ -73,17 +74,18 @@ function createResult(obj) {
 		var li = document.createElement('li');
 		li.style.fontSize = 'medium';
 		ul.appendChild(li);
+		console.log(i);
 		if(i == 1) {
-			console.log(obj); //
 			li.innerHTML = obj.course_dept;
 		}
 		if (i == 2) {
-			var par = document.createElement('p');
-			par.innerHTML = 'Seller info:';
-			par.style.fontWeight = 'bold';
-			par.style.margin = '0';
-			li.appendChild(par);
+			var specialLi = document.createElement('li');
+			specialLi.innerHTML = 'Seller info:';
+			specialLi.style.fontWeight = 'bold';
+			specialLi.style.margin = '0';
 			li.innerHTML = obj.course_num;
+			console.log(specialLi);
+			ul.appendChild(specialLi);
 		}
 		if (i == 3) {
 			li.innerHTML = obj.title;
