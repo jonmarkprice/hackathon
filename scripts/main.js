@@ -6,7 +6,7 @@ window.onload = function() {
 	sellButton.onclick = sellFunction;
 
 	var findBookButton = document.getElementById('find_book_button');
-	findBookButton.onclick = findBookButtonFunction;
+	findBookButton.onclick = findBookButtonFunction; //sendData;
 
 	var sellBookButton = document.getElementById('sell_book_button');
 	sellBookButton.onclick = sellBookButtonFunction;
@@ -190,4 +190,21 @@ function verifyPrice(inputId, errorId) {
 		errorMessage.parentNode.removeChild(errorMessage);
 	}
 	return true;
+}
+
+
+var req2;
+function sendData() {
+	var data = {
+		dept: document.getElementById('subject_input_buy').value,
+		course_num: document.getElementById('course_num_input_buy').value,
+		title: document.getElementById('book_title_input_buy').value
+	};
+	console.log(data);
+	
+	req2 = new XMLHttpRequest();
+	req2.open('POST', '../lib/get_book.php', true); // GET or POST?
+	req2.setRequestHeader("Content-Type", "application/json"); // mb.
+	req2.onload = function() {console.log("data received: " + req2.response);}
+	req2.send(JSON.stringify(data));
 }

@@ -53,7 +53,7 @@ where dept=:dept and num=:num;
 /*when want to buy book: check to see if book is being sold*/
 select for_sale.seller, for_sale.price, for_sale.picture, book.title
 from for_sale join book
-where for_sale.book_id = book.id
+where (for_sale.book_id = book.id)
 and book.course_dept = :dept
 and book.course_num = :course_num
 or book.title = :title;
