@@ -41,7 +41,27 @@ function findBookButtonFunction() {
 	}
 }
 
-function createResult() {
+function addResults() {
+	var ul, obj, i;
+	obj = JSON.parse(req.response); //!
+	for (var i = 0; i < obj.length; i++) {
+		createResult(obj[i]);
+	}
+}
+
+
+// AJAX
+var req;
+function sendAJAXRequest() {
+	req = new XMLHttpRequest();
+	req.open('POST', '../lib/template.json', true); // GET or POST?
+	req.setRequestHeader("Content-Type", "application/json"); // mb.
+	req.onload = addResults;
+	req.send();
+}
+
+
+function createResult(obj) {
 	var div = document.createElement('div');
 	div.style.border = '2px solid #2B2B2B';
 	div.style.width = '60%';
@@ -51,16 +71,34 @@ function createResult() {
 	for (var i = 1; i < 7; i++) {
 		var li = document.createElement('li');
 		li.style.fontSize = 'medium';
-		li.innerHTML = 'li content';
 		ul.appendChild(li);
+		if(i == 1) {
+			li.innerHTML = obj.course_dept;
+		}
 		if (i == 2) {
 			var par = document.createElement('p');
 			par.innerHTML = 'Seller info:';
 			par.style.fontWeight = 'bold';
 			par.style.margin = '0';
 			li.appendChild(par);
+			li.innerHTML = obj.course_num;
 		}
-		else if(i > 2 && i < 6) {
+		if (i == 3) {
+			li.innerHTML = obj.title;
+		}
+		if (i == 4) {
+			li.innerHTML = obj.seller_first_name;
+		}
+		if (i == 5) {
+			li.innerHTML = obj.seller_last_name;
+		}
+		if (i == 6) {
+			li.innerHTML = obj.seller_email;
+		}
+		if (i == 7) {
+			li.innerHTML = obj.price;
+		}
+		if(i > 2 && i < 6) {
 			li.style.textIndent = '20px';
 		}
 	}
