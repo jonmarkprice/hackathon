@@ -26,7 +26,7 @@ function signUp() {
 			email: email
 		};
 		var data = JSON.stringify(account);
-		request.open("POST", "add_user.php", true);
+		request.open("POST", "../lib/add_user.php", true);
 		request.setRequestHeader("Content-Type", "application/json");
 		request.send(data);
 		window.location.href = 'signup_confirm.html';
