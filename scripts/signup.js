@@ -8,7 +8,7 @@ function signUp() {
 					&& verifyPasswordMatch()
 					&& verifyEmail();
 	if (verified) {
-		window.location.href = "signup_confirm.html";
+		window.location.href = 'signup_confirm.html';
 	}
 }
 
