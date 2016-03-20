@@ -44,6 +44,7 @@ create table for_sale (
 );
 
 create table picture (
+	id integer primary key,
 	url varchar(200),
 	for_sale_id integer,
 	foreign key (for_sale_id) references for_sale(id)
