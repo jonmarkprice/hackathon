@@ -35,7 +35,7 @@ function findBookButtonFunction() {
 	var searchResult = document.getElementById('search_results');	
 	if (verified) {
 		searchResult.style.display = 'block';
-		createResult();
+		sendAJAXRequest();
 	} else {
 		searchResult.style.display = 'none';
 	}
@@ -44,6 +44,7 @@ function findBookButtonFunction() {
 function addResults() {
 	var ul, obj, i;
 	obj = JSON.parse(req.response); //!
+	console.log(obj === undefined);
 	for (var i = 0; i < obj.length; i++) {
 		createResult(obj[i]);
 	}
@@ -73,6 +74,7 @@ function createResult(obj) {
 		li.style.fontSize = 'medium';
 		ul.appendChild(li);
 		if(i == 1) {
+			console.log(obj); //
 			li.innerHTML = obj.course_dept;
 		}
 		if (i == 2) {
