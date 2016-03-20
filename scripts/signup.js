@@ -4,7 +4,9 @@ window.onload = function() {
 };
 
 function signUp() {
-	var verified = verifyUsername()
+	var verified = verifyFirstName()
+					&& verifyLastName()
+					&& verifyUsername()
 					&& verifyPasswordLength()
 					&& verifyPasswordMatch()
 					&& verifyEmail();
@@ -13,115 +15,135 @@ function signUp() {
 	}
 }
 
+function verifyFirstName() {
+	var firstNameValue = document.getElementById('first_name_input').value;
+	var firstNameRegex = /^[A-Z]{1}[a-z]{1,20}$/;
+
+	if(!firstNameRegex.test(firstNameValue)) {
+		if(!document.getElementById('first_name_error').hasChildNodes()) {
+			var firstNameError = document.createElement('p');
+			firstNameError.innerHTML = "Name requires 1 uppercase letter and 1 lowercase letter.";
+			firstNameError.id = 'first_name_error_message';
+			firstNameError.className = 'error_message';
+			var firstNameErrorDiv = document.getElementById('first_name_error');
+			firstNameErrorDiv.appendChild(firstNameError);
+		}
+		return false;
+	}
+	else if(document.getElementById('first_name_error').hasChildNodes()) {
+		var firstNameError = document.getElementById('first_name_error_message');
+		firstNameError.parentNode.removeChild(firstNameError);
+	}
+	return true;
+}
+
+function verifyLastName() {
+	var lastNameValue = document.getElementById('last_name_input').value;
+	var lastNameRegex = /^[A-Z]{1}[a-z]{1,20}$/;
+
+	if(!lastNameRegex.test(lastNameValue)) {
+		if(!document.getElementById('last_name_error').hasChildNodes()) {
+			var lastNameError = document.createElement('p');
+			lastNameError.innerHTML = "Last name requires 1 uppercase letter and 1 lowercase letter.";
+			lastNameError.id = 'last_name_error_message';
+			lastNameError.className = 'error_message';
+			var lastNameErrorDiv = document.getElementById('last_name_error');
+			lastNameErrorDiv.appendChild(lastNameError);
+		}
+		return false;
+	}
+	else if(document.getElementById('last_name_error').hasChildNodes()) {
+		var lastNameError = document.getElementById('last_name_error_message');
+		lastNameError.parentNode.removeChild(lastNameError);
+	}
+	return true;
+}
+
 function verifyUsername() {
-	var username = document.getElementById('username_input');
-	var usernameValue = username.value;
-	var usernameRegex = /^\w{4,25}\S$/;
-	var verified = true;
+	var usernameValue = document.getElementById('username_input').value;
+	var usernameRegex = /^\w{3,25}\S$/;
 
 	if(!usernameRegex.test(usernameValue)) {
 		if(!document.getElementById('username_error').hasChildNodes()) {
 			var usernameError = document.createElement('p');
 			usernameError.innerHTML = "Error in the username.";
 			usernameError.id = 'username_error_message';
-			usernameError.style.textAlign = 'left';
-			usernameError.style.marginLeft = '18%';
-			usernameError.style.color = 'red';
-			usernameError.style.fontWeight = 'bold';
+			usernameError.className = 'error_message';
 			var usernameErrorDiv = document.getElementById('username_error');
 			usernameErrorDiv.appendChild(usernameError);
 		}
-		verified = false;
+		return false;
 	}
 	else if(document.getElementById('username_error').hasChildNodes()) {
 		var usernameError = document.getElementById('username_error_message');
 		usernameError.parentNode.removeChild(usernameError);
-		verified = true;
 	}
-	return verified;
+	return true;
 }
 
 function verifyPasswordLength() {
-	var password = document.getElementById('password_input');
-	var passwordValue = password.value;
+	var passwordValue = document.getElementById('password_input').value;
 	var passwordRegex = /^\w{8,25}$/;
-	var verified = true;
 
 	if(!passwordRegex.test(passwordValue)) {
 		if(!document.getElementById('password_length_error').hasChildNodes()) {
 			var passwordLengthError = document.createElement('p');
 			passwordLengthError.innerHTML = "Error in the password.";
 			passwordLengthError.id = 'password_error_message';
-			passwordLengthError.style.textAlign = 'left';
-			passwordLengthError.style.marginLeft = '18%';
-			passwordLengthError.style.color = 'red';
-			passwordLengthError.style.fontWeight = 'bold';
+			passwordLengthError.className = 'error_message';
 			var passwordLengthErrorDiv = document.getElementById('password_length_error');
 			passwordLengthErrorDiv.appendChild(passwordLengthError);
 		}
-		verified = false;
+		return false;
 	}
 	else if(document.getElementById('password_length_error').hasChildNodes()) {
 		var passwordLengthError = document.getElementById('password_error_message');
 		passwordLengthError.parentNode.removeChild(passwordLengthError);
-		verified = true;
 	}
-	return verified;
+	return true;
 }
 
 function verifyPasswordMatch() {
-	var password = document.getElementById('password_input');
-	var passwordValue = password.value;
-	var confirmPassword = document.getElementById('confirm_password_input');
-	var confirmPasswordValue = confirmPassword.value;
-	var verified = true;
+	var passwordValue = document.getElementById('password_input').value;
+	var confirmPasswordValue = document.getElementById('confirm_password_input').value;
 
 	if(!(passwordValue == confirmPasswordValue)) {
 		if(!document.getElementById('password_mismatch_error').hasChildNodes()) {
 			var passwordMismatchError = document.createElement('p');
 			passwordMismatchError.innerHTML = "This password does not match.";
 			passwordMismatchError.id = 'password_mismatch_error_message';
-			passwordMismatchError.style.textAlign = 'left';
-			passwordMismatchError.style.marginLeft = '18%';
-			passwordMismatchError.style.color = 'red';
-			passwordMismatchError.style.fontWeight = 'bold';
+			passwordMismatchError.className = 'error_message';
 			var passwordMismatchErrorDiv = document.getElementById('password_mismatch_error');
 			passwordMismatchErrorDiv.appendChild(passwordMismatchError);
 		}
-		verified = false;
+		return false;
 	}
 	else if(document.getElementById('password_mismatch_error').hasChildNodes()) {
 		var passwordMismatchError = document.getElementById('password_mismatch_error_message');
 		passwordMismatchError.parentNode.removeChild(passwordMismatchError);
-		verified = true;
 	}
-	return verified;
+	return true;
 }
 
 function verifyEmail() {
 	var email = document.getElementById('email_input');
 	var emailValue = email.value;
-	var emailRegex = /^[a-z]{3,4}\d{4}@truman.edu$/;
-	var verified = true;
+	var emailRegex = /^[a-z]{1,4}\d{4}@truman.edu$/;
 
 	if(!emailRegex.test(emailValue)) {
 		if(!document.getElementById('email_error').hasChildNodes()) {
 			var emailError = document.createElement('p');
 			emailError.innerHTML = "Error in the email.";
 			emailError.id = 'email_error_message';
-			emailError.style.textAlign = 'left';
-			emailError.style.marginLeft = '18%';
-			emailError.style.color = 'red';
-			emailError.style.fontWeight = 'bold';
+			emailError.className = 'error_message';
 			var emailErrorDiv = document.getElementById('email_error');
 			emailErrorDiv.appendChild(emailError);
 		}
-		verified = false;
+		return false;
 	}
 	else if(document.getElementById('email_error').hasChildNodes()) {
 		var emailError = document.getElementById('email_error_message');
 		emailError.parentNode.removeChild(emailError);
-		verified = true;
 	}
-	return verified;
+	return true;
 }
