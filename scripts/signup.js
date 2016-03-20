@@ -4,12 +4,41 @@ window.onload = function() {
 };
 
 function signUp() {
-	var verified = verifyPasswordLength()
+	var verified = verifyUsername()
+					&& verifyPasswordLength()
 					&& verifyPasswordMatch()
 					&& verifyEmail();
 	if (verified) {
 		window.location.href = 'signup_confirm.html';
 	}
+}
+
+function verifyUsername() {
+	var username = document.getElementById('username_input');
+	var usernameValue = username.value;
+	var usernameRegex = /^\w{4,25}\S$/;
+	var verified = true;
+
+	if(!usernameRegex.test(usernameValue)) {
+		if(!document.getElementById('username_error').hasChildNodes()) {
+			var usernameError = document.createElement('p');
+			usernameError.innerHTML = "Error in the username.";
+			usernameError.id = 'username_error_message';
+			usernameError.style.textAlign = 'left';
+			usernameError.style.marginLeft = '18%';
+			usernameError.style.color = 'red';
+			usernameError.style.fontWeight = 'bold';
+			var usernameErrorDiv = document.getElementById('username_error');
+			usernameErrorDiv.appendChild(usernameError);
+		}
+		verified = false;
+	}
+	else if(document.getElementById('username_error').hasChildNodes()) {
+		var usernameError = document.getElementById('username_error_message');
+		usernameError.parentNode.removeChild(usernameError);
+		verified = true;
+	}
+	return verified;
 }
 
 function verifyPasswordLength() {
