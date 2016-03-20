@@ -44,7 +44,6 @@ function findBookButtonFunction() {
 function addResults() {
 	var ul, obj, i;
 	obj = JSON.parse(req.response);
-	console.log("addResults");
 	for (var i = 0; i < obj.length; i++) {
 		createResult(obj[i]);
 	}
@@ -58,7 +57,6 @@ function sendAJAXRequest() {
 	req.open('POST', 'http://150.243.196.199/~jon/hackathon/lib/template.json', true); // GET or POST?
 	req.setRequestHeader("Content-Type", "application/json"); // mb.
 	req.onload = addResults;
-	console.log("sendAJAXRequest");
 	req.send();
 }
 
@@ -104,13 +102,13 @@ function createResult(obj) {
 			li.style.textIndent = '20px';
 		}
 	}
-	div.appendChild(ul);
 	var picture = document.createElement('img');
 	picture.style.float = 'right';
 	picture.style.width = '100px';
 	picture.style.height = '100px';
-	picture.style.src = 'http://ecx.images-amazon.com/images/I/51lajKYYfoL._SX258_BO1,204,203,200_.jpg';
+	picture.style.src = '../db_book.jpg';
 	div.appendChild(picture);
+	div.appendChild(ul);
 	var button = document.createElement('button');
 	button.innerHTML = 'Buy!';
 	button.style.margin = '0 0 1% 5%';
