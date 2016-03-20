@@ -74,20 +74,18 @@ function createResult(obj) {
 		var li = document.createElement('li');
 		li.style.fontSize = 'medium';
 		ul.appendChild(li);
-		console.log(i);
 		if(i == 1) {
 			li.innerHTML = obj.course_dept;
 		}
 		if (i == 2) {
+			li.innerHTML = obj.course_num;
+		}
+		if (i == 3) {
 			var specialLi = document.createElement('li');
 			specialLi.innerHTML = 'Seller info:';
 			specialLi.style.fontWeight = 'bold';
 			specialLi.style.margin = '0';
-			li.innerHTML = obj.course_num;
-			console.log(specialLi);
 			ul.appendChild(specialLi);
-		}
-		if (i == 3) {
 			li.innerHTML = obj.title;
 		}
 		if (i == 4) {
@@ -102,13 +100,16 @@ function createResult(obj) {
 		if (i == 7) {
 			li.innerHTML = obj.price;
 		}
-		if(i > 2 && i < 6) {
+		if(i > 3 && i < 7) {
 			li.style.textIndent = '20px';
 		}
 	}
 	div.appendChild(ul);
 	var picture = document.createElement('img');
 	picture.style.float = 'right';
+	picture.style.width = '100px';
+	picture.style.height = '100px';
+	picture.style.src = 'http://ecx.images-amazon.com/images/I/51lajKYYfoL._SX258_BO1,204,203,200_.jpg';
 	div.appendChild(picture);
 	var button = document.createElement('button');
 	button.innerHTML = 'Buy!';
