@@ -77,7 +77,7 @@ function verifyCourseNum(inputId, errorId) {
 	if (!courseNumRegex.test(courseNum)) {
 		if (!document.getElementById(errorId).hasChildNodes()) {
 			var errorMessage = document.createElement('p');
-			errorMessage.innerHTML = "Course number must be numeric";
+			errorMessage.innerHTML = "Course number must be 3 digits";
 			errorMessage.id = errorId + "_message";
 			errorMessage.style.textAlign = "left";
 			errorMessage.style.marginLeft = '18%';

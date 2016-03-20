@@ -48,7 +48,23 @@ function verifyPasswordMatch() {
 	var verified = true;
 
 	if(!(passwordValue == confirmPasswordValue)) {
+		if(!document.getElementById('password_mismatch_error').hasChildNodes()) {
+			var passwordMismatchError = document.createElement('p');
+			passwordMismatchError.innerHTML = "This password does not match.";
+			passwordMismatchError.id = 'password_mismatch_error_message';
+			passwordMismatchError.style.textAlign = 'left';
+			passwordMismatchError.style.marginLeft = '18%';
+			passwordMismatchError.style.color = 'red';
+			passwordMismatchError.style.fontWeight = 'bold';
+			var passwordMismatchErrorDiv = document.getElementById('password_mismatch_error');
+			passwordMismatchErrorDiv.appendChild(passwordMismatchError);
+		}
 		verified = false;
+	}
+	else if(document.getElementById('password_mismatch_error').hasChildNodes()) {
+		var passwordMismatchError = document.getElementById('password_mismatch_error_message');
+		passwordMismatchError.parentNode.removeChild(passwordMismatchError);
+		verified = true;
 	}
 	return verified;
 }
