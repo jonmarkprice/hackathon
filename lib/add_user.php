@@ -21,8 +21,10 @@
 		$sql->bindParam(':email', $email);
 		$sql->bindParam(':password', $password);
 		$sql->execute();
+
+		echo 'successful';
 	} catch( PDOException $error) {
-		echo $error->getMessage();
+		echo 'unsuccessful';
 	}
 
 	$db = null;

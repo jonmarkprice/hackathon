@@ -1,4 +1,5 @@
 <?php
+	// Verify the log in credentials
 	session_start();
 	try {
 		// Connect to databse
@@ -15,13 +16,11 @@
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 
-		if (empty($result) || password != result[0]['password']) {
-			echo 'unsuccessful';
-		} else {
-			echo 'unsuccessful';
+		if (!empty($result) || password == result[0]['password']) {
+			header("Location: ../main.html");
 		}
 	} catch( PDOException $error) {
-		echo 'unsuccessful';
+		echo $error->getMessage();
 	}
 
 	$db = null;
