@@ -11,8 +11,8 @@ create table account (
 	last_name varchar(20),
 	username varchar(30),
 	email varchar(30),
-	hash char(32),
-	salt integer,
+	password char(32),
+	/*salt integer,*/
 	primary key (username)
 );
 

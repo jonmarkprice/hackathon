@@ -1,10 +1,10 @@
 /*to create an account*/
-insert into account values (:name, :id, :email, :phone);
+insert into account values (:first_name, :last_name :username, :email, :password);
 
 /*to update account*/
 update account
-set name=:name, email=:email, phone=:phone
-where id=:id;
+set first_name=:first_name, last_name=:last_name, email=:email,
+where username=:username;
 
 /*to delete account*/
 delete from account
