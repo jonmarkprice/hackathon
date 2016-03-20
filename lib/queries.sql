@@ -1,14 +1,14 @@
 /*to create an account*/
-insert into account values (:name, :id, :email, :phone);
+insert into account values (:first_name, :last_name :username, :email, :password);
 
 /*to update account*/
 update account
-set name=:name, email=:email, phone=:phone
-where id=:id;
+set first_name=:first_name, last_name=:last_name, email=:email, password=:password
+where username=:username;
 
 /*to delete account*/
 delete from account
-where id=:id;
+where username=:username;
 
 /*to post a book to sell*/
 insert into book values (:dept, :course_num, :title, :edition);
@@ -31,17 +31,17 @@ set price=:price where id=:id;
 delete from for_sale
 where id=:id;
 
-/*to add a picture to book selling*/
-insert into picture values (:url, :for_sale_id);
+/*to add a picture to book selling
+insert into picture values (:url, :for_sale_id);*/
 
-/*to update picture*/
+/*to update picture
 update picture
 set url=:url, for_sale_id=:for_sale_id
-where id=:id;
+where id=:id;*/
 
-/*to delete picture*/
+/*to delete picture
 delete from picture
-where id=:id;
+where id=:id;*/
 
 /*to add a new course*/
 insert into course values (:dept, :num);
@@ -51,7 +51,7 @@ delete from course
 where dept=:dept and num=:num;
 
 /*when want to buy book: check to see if book is being sold*/
-select for_sale.seller, for_sale.price, book.title
+select for_sale.seller, for_sale.price, for_sale.picture, book.title
 from for_sale join book
 where for_sale.book_id = book.id
 and book.course_dept = :dept

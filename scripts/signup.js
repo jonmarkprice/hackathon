@@ -11,6 +11,24 @@ function signUp() {
 					&& verifyPasswordMatch()
 					&& verifyEmail();
 	if (verified) {
+		var firstName = document.getElementById("first_name_input").value;
+		var lastName = document.getElementById("last_name_input").value;
+		var username = document.getElementById("username_input").value;
+		var password = document.getElementById("password_input").value;
+		var email = document.getElementById("email_input").value;
+
+		var request = new XMLHttpRequest();
+		var account = {
+			first_name: firstName,
+			last_name: lastName,
+			username: username,
+			password: password,
+			email: email
+		};
+		var data = JSON.stringify(account);
+		request.open("POST", "add_user.php", true);
+		request.setRequestHeader("Content-Type", "application/json");
+		request.send(data);
 		window.location.href = 'signup_confirm.html';
 	}
 }
