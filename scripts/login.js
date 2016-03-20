@@ -9,8 +9,12 @@ function loginFunction() {
 
 	if (username == 'admin' && password == 'hackathon16') {
 		window.location.href = 'main.html';
-	} else {
-		document.getElementById('login_failure').innerHTML = 'Wrong credentials';
+	} else if (!document.getElementById('login_failure').hasChildNodes()) {
+		var message = document.createElement('p');
+		message.innerHTML = "Wrong credentials";
+		message.id = "login_failure_message";
+		message.className = 'error_message';
+		document.getElementById('login_failure').appendChild(message);
 	}
 
 	// var loginButton = document.getElementById('login_button');
@@ -30,4 +34,5 @@ function loginFunction() {
 	// 		window.location.href = 'main.html';
 	// 	}
 	// };
+	//}
 }
