@@ -7,14 +7,13 @@ drop table if exists for_sale;
 drop table if exists picture;
 
 create table account (
-	name varchar(200),
-	id varchar(200),
-	email varchar(200),
-	phone char(10),
-	/* TODO
-	hash char(),
-	salt char(), */
-	primary key (id)
+	first_name varchar (20),
+	last_name varchar(20),
+	username varchar(30),
+	email varchar(30),
+	hash char(32),
+	salt integer,
+	primary key (username)
 );
 
 create table course (
@@ -39,14 +38,15 @@ create table for_sale (
 	book_id varchar(200),
 	seller varchar(200),
 	price decimal,
+	picture_url varchar(200),
 	foreign key (book_id) references book(id),
 	foreign key (seller) references account(id)
 );
 
-create table picture (
+/*create table picture (
 	id integer primary key,
 	url varchar(200),
 	for_sale_id integer,
 	foreign key (for_sale_id) references for_sale(id)
-);
+);*/
 
